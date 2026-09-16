@@ -87,8 +87,12 @@ The project demonstrates:
 │
 ├── screenshots/
 │
+│
+├── Documentation/
+│
 ├── README.md
 └── .gitignore
+
 ```
 
 > The exact structure may be modified during implementation depending on the final project architecture.
