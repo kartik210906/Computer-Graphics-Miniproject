@@ -1,214 +1,129 @@
-# 🚀 2D Space Shooter — OpenGL Computer Graphics Mini Project
+# 🚀 2D Projectile Motion Simulator
 
-A simple **2D Space Shooter game developed using C++ and OpenGL** as a Computer Graphics mini project.
+## 📌 About the Project
+The **2D Projectile Motion Simulator** is a Computer Graphics mini project developed using **C++ and OpenGL (GLUT/FreeGLUT)**.
 
-The project demonstrates fundamental computer graphics concepts such as **2D transformations, animation, keyboard interaction, object rendering, collision detection, and double buffering** through an interactive arcade-style game.
+This project visually demonstrates the motion of a projectile launched at a particular angle and initial velocity. It displays the parabolic trajectory and calculates important parameters such as maximum height, time of flight, and horizontal range.
+
+The simulation allows users to change the launch angle and speed using keyboard controls and observe the projectile's motion in real time.
 
 ## 🎯 Objectives
+- To understand the concept of projectile motion.
+- To visualize the parabolic trajectory using computer graphics.
+- To calculate maximum height, time of flight, and horizontal range.
+- To implement 2D animation using OpenGL.
+- To understand keyboard interaction and graphical transformations.
 
-- To understand the fundamentals of graphics programming using OpenGL.
-- To implement 2D objects and transformations.
-- To create real-time animation using OpenGL.
-- To implement keyboard-based interaction.
-- To implement basic collision detection between game objects.
-- To develop an interactive game environment using fundamental Computer Graphics concepts.
-
-## 🎮 Game Features
-
-- Player-controlled spaceship
-- Left and right movement
-- Enemy spaceship generation and movement
-- Bullet shooting
-- Bullet–enemy collision detection
-- Score system
-- Lives/health system
-- Increasing difficulty through levels
-- Game-over and restart functionality
-- Animated space background
-- Basic explosion effects
+## ✨ Features
+- 2D projectile motion simulation.
+- Real-time projectile animation.
+- Adjustable launch angle and initial velocity.
+- Parabolic trajectory visualization.
+- Display of maximum height.
+- Calculation of time of flight.
+- Calculation of horizontal range.
+- Visualization of velocity components and direction of motion.
 
 ## 🛠️ Technologies Used
-
-- **Language:** C++
+- **Programming Language:** C++
 - **Graphics Library:** OpenGL
-- **Window/Input Library:** FreeGLUT
-- **Development Environment:** Visual Studio / VS Code
-- **Optional Asset Creation:** Blender
+- **Windowing Library:** GLUT / FreeGLUT
+- **IDE:** CodeBlocks
+- **Operating System:** Windows
 
-## 🧩 Computer Graphics Concepts
+## 📐 Mathematical Formulas
 
-The project demonstrates:
+The simulator uses the following projectile motion equations:
 
-- 2D Translation
-- Rotation
-- Scaling
-- Object Transformation
-- Animation
-- Keyboard Interaction
-- Collision Detection
-- Double Buffering
-- Coordinate Systems
-- Basic Shape Rendering
+**1. Horizontal Velocity**
 
-## 🕹️ Controls
+Vx = V₀ × cos(θ)
 
-| Key | Action |
+**2. Vertical Velocity**
+
+Vy = V₀ × sin(θ)
+
+**3. Maximum Height**
+
+H = V₀² × sin²(θ) / 2g
+
+**4. Time of Flight**
+
+T = 2 × V₀ × sin(θ) / g
+
+**5. Horizontal Range**
+
+R = V₀² × sin(2θ) / g
+
+Where:
+- V₀ = Initial velocity
+- θ = Launch angle
+- g = Acceleration due to gravity (9.81 m/s²)
+
+## 🎮 Controls
+
+| Key | Function |
 |---|---|
-| `←` / `A` | Move spaceship left |
-| `→` / `D` | Move spaceship right |
-| `SPACE` | Fire bullet |
-| `P` | Pause / Resume |
-| `R` | Restart game |
-| `ESC` | Exit |
+| SPACE | Launch the projectile |
+| UP Arrow | Increase launch angle |
+| DOWN Arrow | Decrease launch angle |
+| RIGHT Arrow | Increase initial speed |
+| LEFT Arrow | Decrease initial speed |
+| ESC | Exit the simulation |
 
-## 📂 Project Structure
-
-```text
-2D-Space-Shooter/
-│
-├── src/
-│   ├── main.cpp
-│   ├── player.cpp
-│   ├── enemy.cpp
-│   ├── bullet.cpp
-│   ├── collision.cpp
-│   └── game.cpp
-│
-├── include/
-│   ├── player.h
-│   ├── enemy.h
-│   ├── bullet.h
-│   ├── collision.h
-│   └── game.h
-│
-├── assets/
-│   ├── textures/
-│   └── sounds/
-│
-├── screenshots/
-│
-│
-├── Documentation/
-│
-├── README.md
-└── .gitignore
-
-```
-
-> The exact structure may be modified during implementation depending on the final project architecture.
-
-## ⚙️ System Requirements
-
-### Hardware
-
-- Computer/Laptop
-- Minimum 4 GB RAM
-- Basic graphics support
-- Keyboard
-
-### Software
-
-- Windows / Linux
-- C++ compiler
+## 💻 Software Requirements
+- CodeBlocks IDE
+- C++ Compiler (MinGW)
 - OpenGL
-- FreeGLUT
-- Visual Studio or VS Code
+- GLUT / FreeGLUT
+- Windows Operating System
 
-## 🔄 Game Logic
+## ⚙️ How to Run the Project
 
-The game continuously performs the following operations:
+1. Install CodeBlocks with the MinGW compiler.
+2. Install and configure the FreeGLUT library.
+3. Create a new C++ project in CodeBlocks.
+4. Copy the project source code into `main.cpp`.
+5. Configure the linker settings with the following libraries:
 
-```text
-Initialize Game
-      ↓
-Render Player & Enemies
-      ↓
-Read Keyboard Input
-      ↓
-Update Player Position
-      ↓
-Update Bullets
-      ↓
-Update Enemies
-      ↓
-Check Collisions
-      ↓
-Update Score & Lives
-      ↓
-Check Game State
-      ↓
-Render Updated Frame
-      ↓
-Repeat
-```
+   - freeglut
+   - opengl32
+   - glu32
 
-## 💥 Collision Detection
+6. Make sure `freeglut.dll` is available in the executable's directory or system path.
+7. Build and run the project.
 
-Collision detection is used to determine interactions between:
+## 📊 Project Output
 
-- Player and enemies
-- Bullets and enemies
-- Enemies and game boundaries
+The simulator displays:
+- Launch platform and projectile.
+- Launch angle and velocity.
+- Parabolic trajectory.
+- Maximum height.
+- Time of flight.
+- Horizontal range.
+- Current velocity and direction of motion.
 
-When a bullet collides with an enemy:
+## 👨‍💻 Team Members
 
-```text
-Bullet + Enemy
-      ↓
-Collision Detected
-      ↓
-Enemy Destroyed
-      ↓
-Score Increased
-      ↓
-Bullet Removed
-```
+- Kartik Ambhore (10)
+- Aditya Lichade (11)
+- Soham More (14)
+- Shreyas Agre (23)
 
-## 🎨 Rendering
+## 👩‍🏫 Project Guide
 
-The game environment is constructed using OpenGL primitives and transformations.
-
-Major objects include:
-
-- Spaceship
-- Enemy spaceships
-- Bullets
-- Stars
-- Explosions
-- Game interface elements
-
-## 📈 Future Enhancements
-
-Possible future improvements include:
-
-- Additional enemy types
-- Boss battles
-- Power-ups
-- Different weapons
-- Sound effects and background music
-- More complex enemy movement patterns
-- High-score persistence
-- Improved textures and visual effects
-
-## 👥 Team
-
-**Computer Graphics Mini Project**
-
-Team Members:
-
-- Member 1 : Kartik Ambhore
+**Dr. Madhavi Nimkar**
 
 ## 📚 References
-
-- OpenGL documentation
-- FreeGLUT documentation
-- Computer Graphics course material
-- Relevant tutorials and references used during implementation
+- OpenGL Documentation – https://www.opengl.org/
+- FreeGLUT Documentation – https://freeglut.sourceforge.net/
+- C++ Reference – https://en.cppreference.com/
+- Computer Graphics with OpenGL – D. Hearn and M. P. Baker
+- Fundamentals of Physics – Halliday, Resnick and Walker
 
 ---
 
-### ⭐ Project Status
+**Project:** Computer Graphics Mini Project  
+**Title:** 2D Projectile Motion Simulator
 
-**Currently under development.**
-
-The project will be implemented incrementally, starting with basic OpenGL rendering and progressing toward a complete interactive 2D space shooter.
